@@ -93,10 +93,12 @@ resource "aws_instance" "ec2_instance" {
 # 3. S3 Buckets
 resource "aws_s3_bucket" "bucket_1" {
   bucket = "my-tf-bucket-1-${random_id.suffix.hex}"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket" "bucket_2" {
   bucket = "my-tf-bucket-2-${random_id.suffix.hex}"
+  force_destroy = true
 }
 
 resource "random_id" "suffix" {
